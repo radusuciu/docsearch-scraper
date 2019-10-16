@@ -208,12 +208,12 @@ def to_vuepress_config(config):
     ))
     config["custom_settings"] = {"attributesForFaceting": ["lang"]
                                  }
-    config["selectors"]["lvl1"] = ".content h1"
-    config["selectors"]["lvl2"] = ".content h2"
-    config["selectors"]["lvl3"] = ".content h3"
-    config["selectors"]["lvl4"] = ".content h4"
-    config["selectors"]["lvl5"] = ".content h5"
-    config["selectors"]["text"] = ".content p, .content li"
+    config["selectors"]["lvl1"] = ".theme-default-content h1"
+    config["selectors"]["lvl2"] = ".theme-default-content h2"
+    config["selectors"]["lvl3"] = ".theme-default-content h3"
+    config["selectors"]["lvl4"] = ".theme-default-content h4"
+    config["selectors"]["lvl5"] = ".theme-default-content h5"
+    config["selectors"]["text"] = ".theme-default-content p, .theme-default-content li"
     config["selectors"]["lang"] = OrderedDict((
         ("selector", "/html/@lang"),
         ("type", "xpath"),
