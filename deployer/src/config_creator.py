@@ -33,7 +33,14 @@ def extract_root_from_input(input_string):
         return domain.group() if domain else input_string
 
 
+def is_non_empty_list(is_non_empty_list):
+    # Check if the input is a non-empty list. Otherwise, it raises an exception
+    if not is_non_empty_list or len(is_non_empty_list) == 0:
+        raise Exception('{} iss not a non-empty list'.format(is_non_empty_list))
+
+
 def to_docusaurus_config(config, urls=None):
+    is_non_empty_list(urls)
     if urls:
         config["sitemap_urls"] = [
             extract_root_from_input(urls[0]) + "sitemap.xml"]
@@ -69,6 +76,7 @@ def to_docusaurus_config(config, urls=None):
 
 
 def to_docusaurus_v2_config(config, urls=None):
+    is_non_empty_list(urls)
     if urls:
         config["sitemap_urls"] = [
             extract_root_from_input(urls[0]) + "sitemap.xml"]
@@ -112,6 +120,7 @@ def to_gitbook_config(config):
 
 
 def to_pkgdown_config(config, urls=None):
+    is_non_empty_list(urls)
     if urls:
         root = extract_root_from_input(urls[0])
         config["start_urls"] = [{
@@ -228,6 +237,7 @@ def to_vuepress_config(config):
 
 
 def to_larecipe_config(config, urls=None):
+    is_non_empty_list(urls)
     if urls:
         config["sitemap_urls"] = [
             extract_root_from_input(urls[0]) + "sitemap.xml"]
@@ -250,6 +260,7 @@ def to_larecipe_config(config, urls=None):
 
 
 def to_publii_config(config, urls=None):
+    is_non_empty_list(urls)
     if urls:
         config["sitemap_urls"] = [
             extract_root_from_input(urls[0]) + "sitemap.xml"]
