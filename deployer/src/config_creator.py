@@ -279,7 +279,7 @@ def to_publii_config(config, urls=None):
     return config
 
 
-def to_jsdoc_config(config, urls=None):
+def to_jsdoc_config(config):
     config["stop_urls"] = ["\\.js\\.html",
                            "/index\\.html$"]
 
@@ -348,7 +348,7 @@ def create_config(u=None):
         elif helpdesk_helper.is_publii_conversation(conversation):
             config = to_publii_config(config, urls)
         elif helpdesk_helper.is_jsdoc_conversation(conversation):
-            config = to_jsdoc_config(config, urls)
+            config = to_jsdoc_config(config)
 
         config["conversation_id"] = [cuid]
 
